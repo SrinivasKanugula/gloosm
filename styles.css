@@ -368,6 +368,10 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--navy); font-weight: 600
 }
 
 /* ================= RESPONSIVE ================= */
+.mobile-hero-cta {
+  display: none;
+}
+
 @media (max-width: 960px) {
   .header-cta { display: none; }
   .nav-toggle { display: flex; }
@@ -385,38 +389,258 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--navy); font-weight: 600
   }
   .main-nav.open { max-height: 320px; padding: 12px 28px 20px; }
   .main-nav a { padding: 12px 0; }
+}
 
-  .hero {
-    background-position: 75% center;
-    padding: 60px 0;
-    min-height: 480px;
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
   }
-  .hero-inner { justify-content: flex-start; text-align: left; }
-  .hero-copy { max-width: 100%; }
-  .leaf-divider { margin-left: 0; margin-right: 0; }
-  .hero-copy .btn { margin: 0; }
 
-  .blend-card { padding: 36px 28px; }
-  .blend-copy p { margin-left: 0; margin-right: 0; }
+  /* Header */
+  .site-header {
+    background: #f4eee3;
+  }
+  .header-inner {
+    height: 60px;
+    padding: 6px 16px;
+    justify-content: space-between;
+  }
+  .brand-logo {
+    height: 38px;
+    max-height: 40px;
+    transform: none;
+  }
 
-  .why-grid { grid-template-columns: 1fr; }
-}
+  /* Hero Section */
+  .hero {
+    background-image: url("images/Hero (2).png");
+    background-position: 90% -10px;
+    background-size: 115% auto;
+    background-repeat: no-repeat;
+    padding: 34px 0 28px;
+    min-height: 230px;
+    overflow: hidden;
+  }
+  .hero-copy {
+    max-width: 54%;
+  }
+  .hero-copy h1 {
+    font-size: clamp(22px, 6vw, 32px);
+    line-height: 1.1;
+  }
+  .leaf-divider {
+    margin: 8px 0;
+  }
+  .hero-copy p {
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 0;
+  }
+  .hero-copy .btn {
+    display: none;
+  }
 
-@media (max-width: 720px) {
-  .feature-row { flex-wrap: wrap; gap: 20px; }
-  .feature { flex: 0 0 45%; }
-  .feature-sep { display: none; }
-  .br-narrow { display: inline; }
+  /* Feature Bar */
+  .features {
+    margin: -14px 10px 16px;
+    border-radius: 12px;
+    padding: 2px 4px;
+    box-shadow: 0 6px 18px rgba(38, 51, 110, 0.06);
+    background: #f7f2ea;
+  }
+  .feature-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    padding: 8px 4px;
+  }
+  .feature {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 2px;
+  }
+  .feature-icon {
+    flex-shrink: 0;
+  }
+  .feature-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  .feature-text h3 {
+    font-size: 8px;
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+  .feature-text p {
+    font-size: 7.5px;
+    line-height: 1.1;
+    margin-top: 1px;
+  }
+  .feature-sep {
+    display: block;
+    width: 1px;
+    height: 22px;
+    background: rgba(38, 51, 110, 0.12);
+    flex-shrink: 0;
+  }
+  .br-narrow {
+    display: inline;
+  }
 
-  .footer-inner { flex-direction: column; text-align: center; }
-  .footer-nav { margin: 6px auto; flex-wrap: wrap; justify-content: center; }
-}
+  /* Mobile Hero CTA Button */
+  .mobile-hero-cta {
+    display: flex;
+    justify-content: center;
+    margin: 4px 0 22px;
+  }
+  .mobile-hero-cta .btn-whatsapp {
+    width: 82%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 11px 20px;
+    font-size: 12px;
+    border-radius: 30px;
+  }
 
-@media (max-width: 480px) {
-  .container { padding: 0 18px; }
-  .feature { flex: 0 0 100%; justify-content: center; }
-  .why-benefits { grid-template-columns: 1fr; }
-  .why-cards { grid-template-columns: 1fr; }
-  .why-inner, .blend-card { padding: 26px 20px; }
-  .brand-name { font-size: 19px; }
+  /* Blend / About Card */
+  .blend-card {
+    padding: 22px 16px;
+    border-radius: 18px;
+    background: url("images/middle (2).png") center center / cover no-repeat;
+    min-height: 250px;
+  }
+  .blend-copy {
+    max-width: 60%;
+  }
+  .blend-copy h2 {
+    font-size: 19px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .blend-copy p {
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+  .ingredients {
+    margin-bottom: 14px;
+    gap: 5px;
+  }
+  .ingredients li {
+    font-size: 10.5px;
+    gap: 5px;
+  }
+  .blend-copy .btn-whatsapp {
+    padding: 8px 14px;
+    font-size: 10.5px;
+    border-radius: 30px;
+  }
+
+  /* Why / Product Section */
+  .why-inner {
+    padding: 24px 12px;
+  }
+  .why-inner h2 {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .why-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .why-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    background: #f7f2ea;
+    border-radius: 14px;
+    padding: 14px 6px;
+  }
+  .benefit {
+    text-align: center;
+  }
+  .benefit-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .benefit h4 {
+    font-size: 12px;
+    margin: 4px 0 2px;
+  }
+  .benefit p {
+    font-size: 9.5px;
+    line-height: 1.2;
+  }
+
+  .why-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .info-card {
+    background: #f7f2ea;
+    border-radius: 14px;
+    padding: 14px 10px;
+    text-align: left;
+  }
+  .info-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .info-card h4 {
+    font-size: 12px;
+    margin: 6px 0 3px;
+  }
+  .info-card p {
+    font-size: 9.5px;
+    line-height: 1.25;
+  }
+
+  /* CTA Section */
+  .cta-card {
+    padding: 32px 16px;
+    border-radius: 18px;
+    min-height: 210px;
+  }
+  .cta-card h2 {
+    font-size: 19px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .cta-card p {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+  .cta-card .btn {
+    padding: 9px 20px;
+    font-size: 11px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 22px 0 18px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+  .footer-brand .brand-logo {
+    transform: scale(1.3);
+  }
+  .footer-nav {
+    margin: 4px 0;
+  }
+  .footer-social {
+    margin-top: 4px;
+  }
 }
